@@ -21,9 +21,25 @@ func getRandomNumber() int {
 
 //This function will allow the user to make a guess
 func makeGuess(number int) {
-  var guess string
+  var guess int
   fmt.Println("Please guess a number between 1 and 30:")
   fmt.Scan(&guess)
-  fmt.Println("You guess is:", guess)
-  fmt.Println(number)
+  for number != guess {
+    fmt.Println(number)
+    fmt.Println("The Guess:", guess)
+    if number == guess  {
+      fmt.Println("You Guessed the Number!")
+    }else if number > guess {
+      fmt.Println("You guessed to low!")
+    }else if number < guess {
+      fmt.Println("You guessed to high!")
+    }
+    fmt.Println("Please guess a number between 1 and 30:")
+    fmt.Scan(&guess)
+  }
+}
+
+//This function will check the guess of the player
+func checkGuess(number int, guess int) {
+
 }

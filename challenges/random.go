@@ -9,7 +9,23 @@ import (
 
 func main() {
   number := getRandomNumber()
-  makeGuessEasy(number)
+  difficulty := selectDifficulty()
+  if difficulty == 1 {
+    makeGuessEasy(number)
+  }else {
+    fmt.Println("HARD MODE")
+  }
+
+}
+
+//This function will allow the user to select the difficulty of the game
+func selectDifficulty() int {
+  var difficulty int
+  fmt.Println("Please select your game difficulty:")
+  fmt.Println("1. Easy")
+  fmt.Println("2. Hard")
+  fmt.Scan(&difficulty)
+  return difficulty
 }
 
 //This function will get a random number

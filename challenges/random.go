@@ -8,12 +8,13 @@ import (
 )
 
 func main() {
-  number := getRandomNumber()
+  var number int 
   difficulty := selectDifficulty()
   if difficulty == 1 {
+    number := getRandomNumber()
     makeGuessEasy(number)
   }else {
-    fmt.Println("HARD MODE")
+    makeGuessHard(number)
   }
 
 }
@@ -53,3 +54,33 @@ func makeGuessEasy(number int) {
     }
   }
 }
+
+//This function is for the hard game
+func makeGuessHard(number int){
+  var guess int
+  fmt.Println("Please guess a number between 1 and 30:")
+  fmt.Scan(&guess)
+  var count = 0
+  for count <= 6 {
+    if number > guess {
+      fmt.Println("You guessed to low!")
+    }else if number < guess {
+      fmt.Println("You guessed to high!")
+    }
+    fmt.Println("Please guess a number between 1 and 100:")
+    fmt.Scan(&guess)
+    if number == guess  {
+      fmt.Println("You Guessed the Number!")
+      break;
+    }
+    count++
+  }
+}
+
+
+
+
+
+
+
+//

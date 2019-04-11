@@ -43,7 +43,6 @@ func getRandomNumber(difficulty int) int {
 		rand.Seed(time.Now().UnixNano())
 		number = rand.Intn(100)
 	}
-
 	return number
 }
 
@@ -87,11 +86,5 @@ func makeGuessHard(number int) {
 		count++
 	}
 }
-
-
-
-
-
-
 
 //

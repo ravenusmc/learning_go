@@ -35,7 +35,6 @@ func selectDifficulty() int {
 
 //This function will get a random number
 func getRandomNumber(difficulty int) int {
-	fmt.Println(difficulty)
 	if difficulty == 1 {
 		rand.Seed(time.Now().UnixNano())
 		number = rand.Intn(30)
@@ -43,6 +42,7 @@ func getRandomNumber(difficulty int) int {
 		rand.Seed(time.Now().UnixNano())
 		number = rand.Intn(100)
 	}
+
 	return number
 }
 
@@ -84,7 +84,13 @@ func makeGuessHard(number int) {
 			break
 		}
 		count++
+		fmt.Println(count)
+	}
+	if count >= 6 {
+		fmt.Println("You Ran out of guesses!!")
+		fmt.Println("Maybe try easy mode...")
 	}
 }
+
 
 //

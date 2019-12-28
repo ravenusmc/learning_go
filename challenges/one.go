@@ -4,14 +4,25 @@
 package main
 import (
   "fmt"
-  "math/rand"
 )
 
+//First program - simply ask for a name.
+
+// func main() {
+//   var name string
+//   fmt.Println("What is your name?")
+//   fmt.Scan(&name)
+//
+//   fmt.Println("Good day", name)
+// }
+
+//This second program will ask for a name and last name and then ask for a greeting
 func main() {
   var name string
+  var lastName string
   fmt.Println("What is your name?")
   fmt.Scan(&name)
-
-  fmt.Println("Good day", name)
-
+  fmt.Println("What is your last name?")
+  fmt.Scan(&lastName)
+  fmt.Println("Hello", name, lastName)
 }
